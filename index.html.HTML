@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSSING PISONET CAFE | Hot Cup Noodles</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Orbitron for gaming headers & Inter for clean readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        gaming: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            dark: '#090d16',
+                            card: '#111827',
+                            neonCyan: '#00f0ff',
+                            neonPink: '#ff0055',
+                            neonAmber: '#ffb703',
+                            neonGreen: '#10b981'
+                        }
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3.5s ease-in-out infinite',
+                        'ring-bell': 'ringBell 0.6s ease-in-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        ringBell: {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '20%': { transform: 'rotate(18deg)' },
+                            '40%': { transform: 'rotate(-16deg)' },
+                            '60%': { transform: 'rotate(12deg)' },
+                            '80%': { transform: 'rotate(-8deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Gaming Grid & Steam Animations */
+        body {
+            background-color: #090d16;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(0, 240, 255, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(255, 0, 85, 0.1) 0%, transparent 45%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        .neon-text-cyan {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 25px rgba(0, 240, 255, 0.3);
+        }
+
+        .neon-text-amber {
+            text-shadow: 0 0 12px rgba(255, 183, 3, 0.7);
+        }
+
+        .neon-box-glow {
+            box-shadow: 0 0 35px rgba(0, 240, 255, 0.15), inset 0 0 20px rgba(255, 0, 85, 0.08);
+        }
+
+        /* Rising Steam Animation for the Cup Noodles SVG */
+        @keyframes steamRise {
+            0% {
+                transform: translateY(12px) scaleX(0.9);
+                opacity: 0;
+            }
+            40% {
+                opacity: 0.75;
+            }
+            80% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-34px) scaleX(1.2);
+                opacity: 0;
+            }
+        }
+
+        .steam-path-1 {
+            animation: steamRise 2.6s infinite ease-out;
+        }
+        .steam-path-2 {
+            animation: steamRise 2.6s infinite ease-out 0.85s;
+        }
+        .steam-path-3 {
+            animation: steamRise 2.6s infinite ease-out 1.7s;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between selection:bg-cyber-neonPink selection:text-white overflow-x-hidden">
+
+    <!-- Top Navigation / Gaming Cafe Header -->
+    <header class="w-full border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+            <!-- Brand Title -->
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyber-neonCyan via-blue-600 to-cyber-neonPink p-0.5 shadow-lg shadow-cyan-500/20">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                        <!-- Gamepad Icon SVG -->
+                        <svg class="w-6 h-6 text-cyber-neonCyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-gaming text-2xl sm:text-3xl md:text-4xl font-black tracking-wider bg-gradient-to-r from-white via-cyber-neonCyan to-cyber-neonPink bg-clip-text text-transparent neon-text-cyan">
+                        BOSSING PISONET CAFE
+                    </h1>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium tracking-widest uppercase">
+                        Gamer Fuel Station &bull; Open & Ready
+                    </p>
+                </div>
+            </div>
+
+            <!-- Live Status & Simulated Close Button (for testing exit-intent modal) -->
+            <div class="flex items-center gap-3">
+                <div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 text-xs font-bold tracking-wide">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>HOT WATER READY</span>
+                </div>
+                <button 
+                    id="simulateCloseBtn"
+                    type="button"
+                    title="Test Exit / Close Window Prompt"
+                    class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-rose-950/70 text-slate-300 hover:text-rose-300 border border-slate-700 hover:border-rose-500/60 text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                    <span>Close Display</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Product Display Showcase -->
+    <main class="flex-grow flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
+        <div class="max-w-5xl w-full bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-10 md:p-12 neon-box-glow relative overflow-hidden">
+            
+            <!-- Decorative Corner Accents -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-cyber-neonPink/10 blur-3xl rounded-full pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-cyber-neonCyan/10 blur-3xl rounded-full pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                
+                <!-- Left Column: Appetizing Cup Noodles Graphic & Price Badge -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+                    
+                    <!-- Floating Price Badge -->
+                    <div class="absolute -top-2 right-2 sm:right-6 lg:right-0 z-20 transform rotate-6 hover:rotate-0 transition-transform">
+                        <div class="bg-gradient-to-br from-amber-400 via-orange-500 to-rose-600 p-0.5 rounded-2xl shadow-xl shadow-orange-500/30">
+                            <div class="bg-slate-950/90 px-4 py-2.5 rounded-[14px] text-center">
+                                <span class="block text-[10px] font-bold uppercase tracking-widest text-amber-300">ONLY</span>
+                                <span class="font-gaming text-2xl sm:text-3xl font-black text-white neon-text-amber">&#8369;35</span>
+                                <span class="block text-[11px] font-extrabold uppercase tracking-wider text-orange-400">PER CUP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Illustrated Cup Noodles SVG with Animated Steam -->
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center animate-float">
+                        <svg viewBox="0 0 260 260" class="w-full h-full drop-shadow-[0_18px_28px_rgba(255,107,0,0.28)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Glowing Backdrop Ring -->
+                            <circle cx="130" cy="145" r="95" fill="url(#cupGlow)" />
+                            
+                            <!-- Animated Rising Steam Lines -->
+                            <path class="steam-path-1" d="M95 82 C85 65, 108 52, 96 34" stroke="#00f0ff" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+                            <path class="steam-path-2" d="M130 76 C120 56, 145 44, 132 22" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+                            <path class="steam-path-3" d="M165 82 C155 65, 178 52, 166 34" stroke="#ffb703" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+
+                            <!-- Chopsticks Lifting Noodles -->
+                            <line x1="115" y1="46" x2="215" y2="26" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+                            <line x1="118" y1="56" x2="218" y2="42" stroke="#d97706" stroke-width="5" stroke-linecap="round"/>
+
+                            <!-- Lifted Wavy Noodles -->
+                            <path d="M118 52 C112 72, 125 85, 118 106" stroke="#fde047" stroke-width="5.5" stroke-linecap="round"/>
+                            <path d="M128 50 C135 72, 122 86, 129 106" stroke="#facc15" stroke-width="5.5" stroke-linecap="round"/>
+                            <path d="M138 49 C132 70, 144 85, 138 106" stroke="#fef08a" stroke-width="5" stroke-linecap="round"/>
+
+                            <!-- Cup Rim Back -->
+                            <ellipse cx="130" cy="108" rx="68" ry="16" fill="#7c2d12" />
+                            <!-- Broth & Toppings Inside -->
+                            <ellipse cx="130" cy="110" rx="62" ry="13" fill="#ea580c" />
+                            <!-- Egg / Green Onion / Narutomaki Garnish -->
+                            <circle cx="106" cy="109" r="7" fill="#fef9c3" />
+                            <circle cx="106" cy="109" r="3.5" fill="#f59e0b" />
+                            <circle cx="154" cy="110" r="6" fill="#ffffff" />
+                            <path d="M151 110 C153 107, 157 107, 157 110 C157 113, 152 113, 152 110" stroke="#ec4899" stroke-width="2" fill="none"/>
+                            <circle cx="132" cy="114" r="3" fill="#22c55e" />
+                            <circle cx="120" cy="105" r="2.5" fill="#4ade80" />
+
+                            <!-- Cup Body -->
+                            <path d="M62 108 L80 216 C82 226, 178 226, 180 216 L198 108 C180 123, 80 123, 62 108 Z" fill="url(#cupBodyGrad)" stroke="#fb923c" stroke-width="2"/>
+                            
+                            <!-- Decorative Cyber Stripe on Cup -->
+                            <path d="M69 144 C95 156, 165 156, 191 144 L186 175 C162 186, 98 186, 74 175 Z" fill="#0f172a" opacity="0.92"/>
+                            
+                            <!-- Cup Label Text -->
+                            <text x="130" y="164" text-anchor="middle" fill="#00f0ff" font-family="Orbitron, sans-serif" font-weight="900" font-size="13" letter-spacing="1.5">HOT NOODLES</text>
+                            <text x="130" y="198" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="11" letter-spacing="1">BOSSING SPECIAL</text>
+
+                            <!-- Cup Rim Front Highlight -->
+                            <path d="M62 108 C80 123, 180 123, 198 108" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+
+                            <!-- Gradients -->
+                            <defs>
+                                <radialGradient id="cupGlow" cx="0.5" cy="0.5" r="0.5">
+                                    <stop offset="0%" stop-color="#f97316" stop-opacity="0.35"/>
+                                    <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+                                </radialGradient>
+                                <linearGradient id="cupBodyGrad" x1="62" y1="108" x2="198" y2="220" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#dc2626"/>
+                                    <stop offset="50%" stop-color="#ea580c"/>
+                                    <stop offset="100%" stop-color="#9a3412"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Flavor / Perk Tags -->
+                    <div class="flex flex-wrap justify-center gap-2 mt-2">
+                        <span class="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-amber-300">
+                            &#127836; Piping Hot
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-cyan-300">
+                            &#9889; Instant Energy
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-pink-300">
+                            &#127915; Gamer Favorite
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Exact Promotional Message & Interactive Doorbell CTA -->
+                <div class="lg:col-span-7 flex flex-col justify-center text-center lg:text-left space-y-6">
+                    
+                    <div class="inline-flex items-center justify-center lg:justify-start gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-cyber-neonPink/20 border border-cyber-neonPink/50 text-cyber-neonPink text-xs sm:text-sm font-black uppercase tracking-widest">
+                            Hungry While Gaming?
+                        </span>
+                    </div>
+
+                    <!-- EXACT REQUIRED PROMOTIONAL MESSAGE -->
+                    <div class="bg-slate-950/90 border-2 border-cyber-neonCyan/60 rounded-2xl p-5 sm:p-7 shadow-lg shadow-cyan-500/10">
+                        <h2 class="font-gaming text-2xl sm:text-3xl md:text-4xl font-black leading-snug tracking-wide text-white uppercase">
+                            CUP NOODLES AVAILBLE INSIDE PUSH THE DOORBELL TO ORDER 35PESOS PER CUP
+                        </h2>
+                    </div>
+
+                    <!-- Quick 3-Step Visual Guide -->
+                    <div class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                        <div class="bg-slate-800/60 border border-slate-700/80 rounded-xl p-3">
+                            <div class="text-lg sm:text-xl font-black text-cyber-neonCyan mb-0.5">1</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-200">Push Doorbell</div>
+                        </div>
+                        <div class="bg-slate-800/60 border border-slate-700/80 rounded-xl p-3">
+                            <div class="text-lg sm:text-xl font-black text-amber-400 mb-0.5">2</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-200">Pay &#8369;35 / Cup</div>
+                        </div>
+                        <div class="bg-slate-800/60 border border-slate-700/80 rounded-xl p-3">
+                            <div class="text-lg sm:text-xl font-black text-cyber-neonPink mb-0.5">3</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-200">Enjoy Hot!</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Ring Doorbell / Order Info Button -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center gap-4">
+                        <button 
+                            id="ringDoorbellBtn"
+                            type="button"
+                            class="w-full sm:w-auto flex-1 py-4 px-7 rounded-2xl bg-gradient-to-r from-cyber-neonCyan via-blue-500 to-cyber-neonPink hover:from-cyan-300 hover:to-pink-500 text-slate-950 font-gaming font-black text-base sm:text-lg tracking-wider uppercase shadow-xl shadow-cyan-500/25 hover:shadow-pink-500/35 transform hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 cursor-pointer"
+                        >
+                            <svg id="bellIcon" class="w-6 h-6 text-slate-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                            </svg>
+                            <span>Ring Doorbell / Order Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-800/70 bg-slate-950/70 py-4 px-4 text-center text-xs sm:text-sm text-slate-400">
+        <p>
+            <strong class="text-slate-200 font-gaming">BOSSING PISONET CAFE</strong> &mdash; Push the physical doorbell at the entrance/counter to grab your hot cup noodles for <span class="text-amber-400 font-bold">35 Pesos</span>!
+        </p>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 1: DOORBELL CHIME & ORDER INSTRUCTIONS CONFIRMATION MODAL        -->
+    <!-- ===================================================================== -->
+    <div id="doorbellModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm transition-opacity">
+        <div class="bg-slate-900 border-2 border-cyber-neonCyan rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl shadow-cyan-500/20 text-center relative transform scale-100 transition-transform">
+            
+            <!-- Animated Bell Badge -->
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-cyber-neonCyan">
+                <svg class="w-9 h-9 animate-ring-bell" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                </svg>
+            </div>
+
+            <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-extrabold uppercase tracking-widest mb-2">
+                DING-DONG! READY TO SERVE
+            </span>
+            <h3 class="font-gaming text-2xl font-black text-white mb-3">
+                HOW TO ORDER YOUR CUP
+            </h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-5">
+                Please push the <strong class="text-cyber-neonCyan">physical doorbell</strong> outside/inside <strong class="text-white">BOSSING PISONET CAFE</strong> to alert our staff!
+            </p>
+
+            <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 mb-6">
+                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Price Per Cup</p>
+                <p class="font-gaming text-3xl font-black text-amber-400 mt-0.5">35 PESOS</p>
+                <p class="text-xs text-slate-400 mt-1">Includes hot water & utensils</p>
+            </div>
+
+            <button 
+                id="closeDoorbellModalBtn"
+                type="button"
+                class="w-full py-3.5 px-6 rounded-xl bg-cyber-neonCyan hover:bg-cyan-300 text-slate-950 font-gaming font-black text-sm uppercase tracking-wider transition-colors cursor-pointer"
+            >
+                Got It! Pushing Doorbell Now
+            </button>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 2: EXIT-INTENT / CLOSE WINDOW ORDER PROMPT MODAL                -->
+    <!-- ===================================================================== -->
+    <div id="exitIntentModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md">
+        <div class="bg-slate-900 border-2 border-cyber-neonPink rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl shadow-pink-500/30 text-center relative">
+            
+            <!-- Alert Icon -->
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-rose-500/20 border border-rose-500/50 flex items-center justify-center text-4xl">
+                &#9888;
+            </div>
+
+            <span class="inline-block px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-black uppercase tracking-widest mb-2">
+                BOSSING PISONET CAFE
+            </span>
+
+            <h3 class="font-gaming text-xl sm:text-2xl font-black text-white leading-snug mb-3">
+                Wait! Before you go &mdash; will you order Cup Noodles?
+            </h3>
+
+            <p class="text-slate-300 text-sm sm:text-base mb-6">
+                Hot & delicious cup noodles are available right now for only <strong class="text-amber-400 font-extrabold">35 PESOS PER CUP</strong>!
+            </p>
+
+            <!-- Yes / No Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button 
+                    id="exitYesOrderBtn"
+                    type="button"
+                    class="flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-slate-950 font-gaming font-black text-xs sm:text-sm uppercase tracking-wide shadow-lg shadow-emerald-500/25 transition-all cursor-pointer"
+                >
+                    Yes, I'll Order! (Push Doorbell)
+                </button>
+                <button 
+                    id="exitNoLaterBtn"
+                    type="button"
+                    class="sm:w-auto py-3.5 px-5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs sm:text-sm border border-slate-700 transition-colors cursor-pointer"
+                >
+                    No, Maybe Later
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Web Audio Doorbell Chime, Modals, and Exit-Intent Detection -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // DOM Elements
+            const ringDoorbellBtn = document.getElementById('ringDoorbellBtn');
+            const bellIcon = document.getElementById('bellIcon');
+            const doorbellModal = document.getElementById('doorbellModal');
+            const closeDoorbellModalBtn = document.getElementById('closeDoorbellModalBtn');
+
+            const simulateCloseBtn = document.getElementById('simulateCloseBtn');
+            const exitIntentModal = document.getElementById('exitIntentModal');
+            const exitYesOrderBtn = document.getElementById('exitYesOrderBtn');
+            const exitNoLaterBtn = document.getElementById('exitNoLaterBtn');
+
+            // State flags
+            let hasOrderedOrDismissed = false;
+            let exitModalShownRecently = false;
+
+            /**
+             * Synthesizes a pleasant two-tone "Ding-Dong" doorbell chime using the Web Audio API
+             * (Zero external audio files required)
+             */
+            function playDoorbellChime() {
+                try {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    if (!AudioContext) return;
+                    const ctx = new AudioContext();
+                    const now = ctx.currentTime;
+
+                    // First chime note ("Ding" - E5: 659.25 Hz)
+                    const osc1 = ctx.createOscillator();
+                    const gain1 = ctx.createGain();
+                    osc1.type = 'sine';
+                    osc1.frequency.setValueAtTime(659.25, now);
+                    gain1.gain.setValueAtTime(0.001, now);
+                    gain1.gain.exponentialRampToValueAtTime(0.35, now + 0.03);
+                    gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.75);
+                    osc1.connect(gain1);
+                    gain1.connect(ctx.destination);
+                    osc1.start(now);
+                    osc1.stop(now + 0.8);
+
+                    // Second chime note ("Dong" - C5: 523.25 Hz)
+                    const osc2 = ctx.createOscillator();
+                    const gain2 = ctx.createGain();
+                    osc2.type = 'sine';
+                    osc2.frequency.setValueAtTime(523.25, now + 0.38);
+                    gain2.gain.setValueAtTime(0.001, now + 0.38);
+                    gain2.gain.exponentialRampToValueAtTime(0.35, now + 0.42);
+                    gain2.gain.exponentialRampToValueAtTime(0.001, now + 1.35);
+                    osc2.connect(gain2);
+                    gain2.connect(ctx.destination);
+                    osc2.start(now + 0.38);
+                    osc2.stop(now + 1.4);
+                } catch (err) {
+                    console.warn('Web Audio API playback skipped:', err);
+                }
+            }
+
+            /**
+             * Opens the Doorbell / Order Instruction Modal and triggers audio + visual ring
+             */
+            function openDoorbellModal() {
+                playDoorbellChime();
+
+                // Trigger bell shake animation on main button
+                bellIcon.classList.remove('animate-ring-bell');
+                void bellIcon.offsetWidth; // trigger reflow
+                bellIcon.classList.add('animate-ring-bell');
+
+                // Show modal
+                exitIntentModal.classList.add('hidden');
+                exitIntentModal.classList.remove('flex');
+
+                doorbellModal.classList.remove('hidden');
+                doorbellModal.classList.add('flex');
+            }
+
+            /**
+             * Closes the Doorbell Instruction Modal
+             */
+            function closeDoorbellModal() {
+                doorbellModal.classList.add('hidden');
+                doorbellModal.classList.remove('flex');
+            }
+
+            /**
+             * Opens the Exit-Intent ("Will you order?") Modal
+             */
+            function openExitIntentModal() {
+                // Avoid overlapping if doorbell modal is already open
+                if (!doorbellModal.classList.contains('hidden')) return;
+
+                exitIntentModal.classList.remove('hidden');
+                exitIntentModal.classList.add('flex');
+            }
+
+            /**
+             * Closes the Exit-Intent Modal
+             */
+            function closeExitIntentModal() {
+                exitIntentModal.classList.add('hidden');
+                exitIntentModal.classList.remove('flex');
+            }
+
+            // 1. Ring Doorbell Button Click
+            ringDoorbellBtn.addEventListener('click', () => {
+                hasOrderedOrDismissed = true;
+                openDoorbellModal();
+            });
+
+            closeDoorbellModalBtn.addEventListener('click', closeDoorbellModal);
+
+            // 2. Simulated Close Button (explicitly opens exit confirmation modal)
+            simulateCloseBtn.addEventListener('click', () => {
+                openExitIntentModal();
+            });
+
+            // 3. Exit-Intent Modal Choices
+            exitYesOrderBtn.addEventListener('click', () => {
+                hasOrderedOrDismissed = true;
+                openDoorbellModal();
+            });
+
+            exitNoLaterBtn.addEventListener('click', () => {
+                hasOrderedOrDismissed = true;
+                closeExitIntentModal();
+            });
+
+            // Close modals when clicking outside the modal card
+            doorbellModal.addEventListener('click', (e) => {
+                if (e.target === doorbellModal) closeDoorbellModal();
+            });
+            exitIntentModal.addEventListener('click', (e) => {
+                if (e.target === exitIntentModal) closeExitIntentModal();
+            });
+
+            // 4. Custom Exit-Intent Detection (Mouse moving toward top edge of viewport to close tab/window)
+            document.addEventListener('mouseleave', (e) => {
+                if (e.clientY <= 12 && !exitModalShownRecently) {
+                    exitModalShownRecently = true;
+                    openExitIntentModal();
+                    // Allow re-triggering after 15 seconds if they stay on the page
+                    setTimeout(() => {
+                        exitModalShownRecently = false;
+                    }, 15000);
+                }
+            });
+
+            // 5. Standard Browser `beforeunload` Event Listener
+            // Triggers the browser's native confirmation dialog when attempting to close the tab/window
+            window.addEventListener('beforeunload', (event) => {
+                if (!hasOrderedOrDismissed) {
+                    event.preventDefault();
+                    // Setting returnValue is required by modern browsers to trigger the native Leave Site prompt
+                    event.returnValue = 'Wait! Before you go — will you order Cup Noodles? (35 Pesos per cup)';
+                    return event.returnValue;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
