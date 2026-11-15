@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOSSING PISONET CAFE | Hot Cup Noodles</title>
+    <title>BOSSING PISONET CAFE | Hot Cup Noodles & Pancit Canton</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Orbitron for gaming headers & Inter for clean readability -->
@@ -162,22 +162,33 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
                 
-                <!-- Left Column: Appetizing Cup Noodles Graphic & Price Badge -->
+                <!-- Left Column: Appetizing Cup Noodles & Pancit Canton Graphic & Price Badges -->
                 <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
                     
-                    <!-- Floating Price Badge -->
+                    <!-- Floating Price Badge: Cup Noodles -->
                     <div class="absolute -top-2 right-2 sm:right-6 lg:right-0 z-20 transform rotate-6 hover:rotate-0 transition-transform">
                         <div class="bg-gradient-to-br from-amber-400 via-orange-500 to-rose-600 p-0.5 rounded-2xl shadow-xl shadow-orange-500/30">
                             <div class="bg-slate-950/90 px-4 py-2.5 rounded-[14px] text-center">
-                                <span class="block text-[10px] font-bold uppercase tracking-widest text-amber-300">ONLY</span>
+                                <span class="block text-[10px] font-bold uppercase tracking-widest text-amber-300">CUP NOODLES</span>
                                 <span class="font-gaming text-2xl sm:text-3xl font-black text-white neon-text-amber">&#8369;35</span>
                                 <span class="block text-[11px] font-extrabold uppercase tracking-wider text-orange-400">PER CUP</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Custom Illustrated Cup Noodles SVG with Animated Steam -->
-                    <div class="w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center animate-float">
+                    <!-- Floating Price Badge: Pancit Canton -->
+                    <div class="absolute -top-2 left-2 sm:left-6 lg:left-0 z-20 transform -rotate-6 hover:rotate-0 transition-transform">
+                        <div class="bg-gradient-to-br from-cyan-400 via-emerald-500 to-teal-600 p-0.5 rounded-2xl shadow-xl shadow-cyan-500/30">
+                            <div class="bg-slate-950/90 px-4 py-2.5 rounded-[14px] text-center">
+                                <span class="block text-[10px] font-bold uppercase tracking-widest text-cyan-300">PANCIT CANTON</span>
+                                <span class="font-gaming text-2xl sm:text-3xl font-black text-white neon-text-cyan">&#8369;23</span>
+                                <span class="block text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">PER PACK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Illustrated Cup Noodles & Pancit Canton SVG with Animated Steam -->
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center animate-float mt-6 sm:mt-4">
                         <svg viewBox="0 0 260 260" class="w-full h-full drop-shadow-[0_18px_28px_rgba(255,107,0,0.28)]" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <!-- Glowing Backdrop Ring -->
                             <circle cx="130" cy="145" r="95" fill="url(#cupGlow)" />
@@ -221,6 +232,15 @@
                             <!-- Cup Rim Front Highlight -->
                             <path d="M62 108 C80 123, 180 123, 198 108" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
 
+                            <!-- Mini Pancit Canton Pack Accent at Bottom Right -->
+                            <g transform="translate(148, 172) rotate(8)">
+                                <rect x="0" y="0" width="84" height="54" rx="8" fill="url(#cantonGrad)" stroke="#00f0ff" stroke-width="2"/>
+                                <rect x="6" y="16" width="72" height="22" rx="4" fill="#090d16" opacity="0.9"/>
+                                <text x="42" y="26" text-anchor="middle" fill="#ffb703" font-family="Orbitron, sans-serif" font-weight="900" font-size="7.5" letter-spacing="0.5">PANCIT</text>
+                                <text x="42" y="35" text-anchor="middle" fill="#00f0ff" font-family="Orbitron, sans-serif" font-weight="900" font-size="7.5" letter-spacing="0.5">CANTON</text>
+                                <text x="42" y="49" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="900" font-size="8">&#8369;23</text>
+                            </g>
+
                             <!-- Gradients -->
                             <defs>
                                 <radialGradient id="cupGlow" cx="0.5" cy="0.5" r="0.5">
@@ -232,6 +252,11 @@
                                     <stop offset="50%" stop-color="#ea580c"/>
                                     <stop offset="100%" stop-color="#9a3412"/>
                                 </linearGradient>
+                                <linearGradient id="cantonGrad" x1="0" y1="0" x2="84" y2="54" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#059669"/>
+                                    <stop offset="50%" stop-color="#d97706"/>
+                                    <stop offset="100%" stop-color="#dc2626"/>
+                                </linearGradient>
                             </defs>
                         </svg>
                     </div>
@@ -239,10 +264,10 @@
                     <!-- Flavor / Perk Tags -->
                     <div class="flex flex-wrap justify-center gap-2 mt-2">
                         <span class="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-amber-300">
-                            &#127836; Piping Hot
+                            &#127836; Cup Noodles &#8369;35
                         </span>
                         <span class="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-cyan-300">
-                            &#9889; Instant Energy
+                            &#127837; Pancit Canton &#8369;23
                         </span>
                         <span class="px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-pink-300">
                             &#127915; Gamer Favorite
@@ -259,11 +284,19 @@
                         </span>
                     </div>
 
-                    <!-- EXACT REQUIRED PROMOTIONAL MESSAGE -->
-                    <div class="bg-slate-950/90 border-2 border-cyber-neonCyan/60 rounded-2xl p-5 sm:p-7 shadow-lg shadow-cyan-500/10">
+                    <!-- PROMOTIONAL MESSAGE -->
+                    <div class="bg-slate-950/90 border-2 border-cyber-neonCyan/60 rounded-2xl p-5 sm:p-7 shadow-lg shadow-cyan-500/10 space-y-3">
                         <h2 class="font-gaming text-2xl sm:text-3xl md:text-4xl font-black leading-snug tracking-wide text-white uppercase">
                             CUP NOODLES AVAILBLE INSIDE PUSH THE DOORBELL TO ORDER 35PESOS PER CUP
                         </h2>
+                        <div class="pt-3 border-t border-slate-800 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                            <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 font-gaming text-xs font-black uppercase tracking-wider">
+                                ALSO AVAILABLE
+                            </span>
+                            <p class="font-gaming text-lg sm:text-xl md:text-2xl font-black text-cyber-neonCyan uppercase tracking-wide">
+                                PANCIT CANTON &mdash; 23PESOS
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Quick 3-Step Visual Guide -->
@@ -274,7 +307,7 @@
                         </div>
                         <div class="bg-slate-800/60 border border-slate-700/80 rounded-xl p-3">
                             <div class="text-lg sm:text-xl font-black text-amber-400 mb-0.5">2</div>
-                            <div class="text-xs sm:text-sm font-bold text-slate-200">Pay &#8369;35 / Cup</div>
+                            <div class="text-xs sm:text-sm font-bold text-slate-200">Pay &#8369;35 / &#8369;23</div>
                         </div>
                         <div class="bg-slate-800/60 border border-slate-700/80 rounded-xl p-3">
                             <div class="text-lg sm:text-xl font-black text-cyber-neonPink mb-0.5">3</div>
@@ -303,12 +336,12 @@
     <!-- Footer -->
     <footer class="w-full border-t border-slate-800/70 bg-slate-950/70 py-4 px-4 text-center text-xs sm:text-sm text-slate-400">
         <p>
-            <strong class="text-slate-200 font-gaming">BOSSING PISONET CAFE</strong> &mdash; Push the physical doorbell at the entrance/counter to grab your hot cup noodles for <span class="text-amber-400 font-bold">35 Pesos</span>!
+            <strong class="text-slate-200 font-gaming">BOSSING PISONET CAFE</strong> &mdash; Push the physical doorbell at the entrance/counter to grab your hot Cup Noodles (<span class="text-amber-400 font-bold">35 Pesos</span>) or Pancit Canton (<span class="text-cyber-neonCyan font-bold">23 Pesos</span>)!
         </p>
     </footer>
 
     <!-- ===================================================================== -->
-    <!-- MODAL 1: DOORBELL CHIME & ORDER INSTRUCTIONS CONFIRMATION MODAL        -->
+    <!-- MODAL 1: DOORBELL CHIME & ORDER INSTRUCTIONS CONFIRMATION MODAL       -->
     <!-- ===================================================================== -->
     <div id="doorbellModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm transition-opacity">
         <div class="bg-slate-900 border-2 border-cyber-neonCyan rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl shadow-cyan-500/20 text-center relative transform scale-100 transition-transform">
@@ -324,16 +357,23 @@
                 DING-DONG! READY TO SERVE
             </span>
             <h3 class="font-gaming text-2xl font-black text-white mb-3">
-                HOW TO ORDER YOUR CUP
+                HOW TO ORDER YOUR SNACK
             </h3>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-5">
                 Please push the <strong class="text-cyber-neonCyan">physical doorbell</strong> outside/inside <strong class="text-white">BOSSING PISONET CAFE</strong> to alert our staff!
             </p>
 
-            <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 mb-6">
-                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Price Per Cup</p>
-                <p class="font-gaming text-3xl font-black text-amber-400 mt-0.5">35 PESOS</p>
-                <p class="text-xs text-slate-400 mt-1">Includes hot water & utensils</p>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-3.5">
+                    <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Cup Noodles</p>
+                    <p class="font-gaming text-2xl font-black text-amber-400 mt-0.5">35 PESOS</p>
+                    <p class="text-[11px] text-slate-400 mt-1">Per cup</p>
+                </div>
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-3.5">
+                    <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Pancit Canton</p>
+                    <p class="font-gaming text-2xl font-black text-cyber-neonCyan mt-0.5">23 PESOS</p>
+                    <p class="text-[11px] text-slate-400 mt-1">Per pack</p>
+                </div>
             </div>
 
             <button 
@@ -362,11 +402,11 @@
             </span>
 
             <h3 class="font-gaming text-xl sm:text-2xl font-black text-white leading-snug mb-3">
-                Wait! Before you go &mdash; will you order Cup Noodles?
+                Wait! Before you go &mdash; will you order Cup Noodles or Pancit Canton?
             </h3>
 
             <p class="text-slate-300 text-sm sm:text-base mb-6">
-                Hot & delicious cup noodles are available right now for only <strong class="text-amber-400 font-extrabold">35 PESOS PER CUP</strong>!
+                Hot <strong class="text-amber-400 font-extrabold">Cup Noodles (35 PESOS)</strong> &amp; <strong class="text-cyber-neonCyan font-extrabold">Pancit Canton (23 PESOS)</strong> are available right now!
             </p>
 
             <!-- Yes / No Action Buttons -->
@@ -544,7 +584,7 @@
                 if (!hasOrderedOrDismissed) {
                     event.preventDefault();
                     // Setting returnValue is required by modern browsers to trigger the native Leave Site prompt
-                    event.returnValue = 'Wait! Before you go  will you order Cup Noodles? (35 Pesos per cup)';
+                    event.returnValue = 'Wait! Before you go — will you order Cup Noodles (35 Pesos) or Pancit Canton (23 Pesos)?';
                     return event.returnValue;
                 }
             });
